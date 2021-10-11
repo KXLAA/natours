@@ -21,20 +21,33 @@ $font-size-breakpoints: (
 
 //FONT-SIZE MAPS [fs-map]
 $p-font-sizes: (
-  large : 1.125rem, //18px
-  medium: 1rem,     //16px
-  small : .9375rem, //15px
+  large : 3rem,     //48px
+  medium: 1.875rem, //30px
+  small : 1.5rem,   //24px
 )!default;
 
 $h1-font-sizes: (
-  large : 4.5rem,    //72px
+  large : 6rem,      //96px
   medium: 4rem,      //64px
-  small : 3rem       //48px
+  small : 2rem       //32px
 )!default;
 
 $h2-font-sizes: (
-  large : 3rem,      //48px
+  large : 4rem,      //64px
   medium: 2rem,      //32px
+  small : 1.5rem     //24px
+)!default;
+
+
+$cta-font-sizes: (
+  large : 7.5rem,      //120px
+  medium: 7.5rem,      //120px
+  small : 4.5rem       //72px
+)!default;
+
+$nav-link-font-sizes: (
+  large : 3rem,      //48px
+  medium: 3rem,      //48px
   small : 1.5rem     //24px
 )!default;
 
@@ -124,5 +137,50 @@ $h2-font-sizes: (
 .body--bold{
   @include body(bold);
 }
+
+/// **** OTHER FONT STYLES **** ///
+@mixin font-base{
+  font-family: $font-family;
+  line-height: 1.5;
+}
+
+.cta__txt{
+  @include font-base;
+  @include font-size($cta-font-sizes);
+  font-weight: $fw-black;
+}
+
+.nav__txt{
+  @include font-base;
+  @include font-size($nav-link-font-sizes);
+  font-weight: $fw-black;
+}
+
+.pricing__price--txt{
+  @include font-base;
+  font-weight: $fw-bold;
+  font-size: 3rem;
+}
+
+.pricing__features--txt{
+  @include font-base;
+  font-size: 24px;
+  font-weight: $fw-normal;
+}
+
+.pricing__card--tag{
+  @include font-base;
+  font-weight: $fw-bold;
+  font-size: 1.25rem;
+}
+
+.button__txt{
+  @include font-base;
+  font-weight: $fw-bold;
+  font-size: 1.25rem;
+}
+
+
+
 
 
