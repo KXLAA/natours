@@ -1,0 +1,205 @@
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default styles on links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.heading--primary {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #1E1D1D;
+  line-height: 1.5;
+  font-size: 4.5rem;
+}
+@media screen and (max-width: 700px) {
+  .heading--primary {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .heading--primary {
+    font-size: 3rem;
+  }
+}
+
+.heading--secondary {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #1E1D1D;
+  line-height: 1.5;
+  font-size: 3rem;
+}
+@media screen and (max-width: 700px) {
+  .heading--secondary {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .heading--secondary {
+    font-size: 1.5rem;
+  }
+}
+
+.body--main {
+  font-size: 1.125rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1E1D1D;
+}
+@media screen and (max-width: 700px) {
+  .body--main {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .body--main {
+    font-size: 0.9375rem;
+  }
+}
+
+.body--bold {
+  font-size: 1.125rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #1E1D1D;
+}
+@media screen and (max-width: 700px) {
+  .body--bold {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .body--bold {
+    font-size: 0.9375rem;
+  }
+}
+
+.button--primary {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0.3125rem;
+  padding: 1.125rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #1E1D1D;
+  background: #FFFFFF;
+}
+.button--primary:hover {
+  background: #ebebeb;
+  transform: translateX(0rem) translateY(-0.3125rem);
+}
+.button--primary:active {
+  background: #bfbfbf;
+  transform: translateX(0rem) translateY(0.125rem);
+}
+
+.button--secondary {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0.3125rem;
+  padding: 1.125rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+  background: #501EC4;
+}
+.button--secondary:hover {
+  background: #4219a1;
+  transform: translateX(0rem) translateY(-0.3125rem);
+}
+.button--secondary:active {
+  background: #230d55;
+  transform: translateX(0rem) translateY(0.125rem);
+}
+
+.button--full-width {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0.3125rem;
+  padding: 1.125rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: block !important;
+  width: 100% !important;
+}/*# sourceMappingURL=main.css.map */

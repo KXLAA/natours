@@ -1,0 +1,100 @@
+/// **** LAYOUT CONTAINER **** ///
+
+// Map with Container Max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Mixins utilizing map
+@mixin container{
+    margin: 0 auto;
+    max-width: map-get($container-max-widths, xxl);
+    padding: 0rem 5.625rem 0rem 5.625rem;
+
+    @include respond-to(md){
+        padding: 0rem 2.5rem 0rem 2.5rem;
+    }
+
+    @include respond-to(xs){
+        padding: 0rem 1.5rem 0rem 1.5rem;
+    }
+
+    @include respond-to(xxs){
+        padding: 0rem 1rem 0rem 1rem;
+    }
+}
+
+@mixin container-fluid{
+  margin: 0 auto;
+  max-width: 99.9%;
+  padding: 0rem .25rem 0rem .25rem;
+}
+
+// ===== Usage ===== //
+//@include container-fluid;
+//@include container;
+
+
+/// **** BREAKPOINT MANAGER **** ///
+
+// Map with breakpoints
+$breakpoints: (
+    xxs:  352px,
+    xs:   480px,
+    sm:   768px,
+    md:   992px,
+    lg:   1200px,
+    xl:   1440px
+) !default;
+
+
+// Respond-To Mixin
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+      // Retrieves the value from the key
+      $value: map-get($breakpoints, $breakpoint);
+      
+      // If the key exists in the map
+      @if $value != null {
+            
+        // Prints a media query based on the value
+        @media screen and (max-width: $value) {
+            @content;
+        }
+      }
+  }
+   
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// ===== Usage ===== //
+//@include respond-to(xxs){}
+//@include respond-to(xs){}
+//@include respond-to(sm){}
+//@include respond-to(md){}
+//@include respond-to(lg){}
+//@include respond-to(xl){}
+
+
+/// **** FLEX-BOX TOOLKIT **** ///
+@mixin flex($direction: row, $justify-content: space-between, $align-items: null, $wrap: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $wrap;
+}
+
+// ===== Usage ===== //
+//@include flex() -> for Default Values
+//@include flex($align-items: center, $justify-content: center) -> for specifics
+// -> HORIZONTAL [UP & DOWN] {justify} // -> VERTICAL [LEFT & RIGHT] {align} 
+

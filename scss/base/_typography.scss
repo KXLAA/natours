@@ -1,0 +1,128 @@
+/// **** FONT VARIABLES **** ///
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+//Font family
+$font-family: 'Inter', sans-serif;
+
+//Font Weights
+$fw-light:           300;
+$fw-normal:          400;
+$fw-medium:          500;
+$fw-semi-bold:       600;
+$fw-bold:            700;
+$fw-xtra-bold:       800;
+$fw-black:           900;
+
+//FONT-SIZE BREAKPOINTS [fs-breakpoints]
+$font-size-breakpoints: (
+  small : 480px,
+  medium: 700px, 
+)!default;
+
+//FONT-SIZE MAPS [fs-map]
+$p-font-sizes: (
+  large : 1.125rem, //18px
+  medium: 1rem,     //16px
+  small : .9375rem, //15px
+)!default;
+
+$h1-font-sizes: (
+  large : 4.5rem,    //72px
+  medium: 4rem,      //64px
+  small : 3rem       //48px
+)!default;
+
+$h2-font-sizes: (
+  large : 3rem,      //48px
+  medium: 2rem,      //32px
+  small : 1.5rem     //24px
+)!default;
+
+
+
+@mixin font-size($fs-map, $fs-breakpoints: $font-size-breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map { //For each Key & Value in FONT-SIZE MAP
+    @if $fs-breakpoint == large { //If the Font Size's map Key is === large -> Font Size would be value of null Key
+      font-size: $fs-font-size;
+    }
+    @else {
+      // If $fs-font-size value [eg 17px] has a key name that exists in FONT-SIZE BREAKPOINTS MAP, use the value in that FONT-SIZE BREAKPOINTS MAP
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {          //(map-name, map-key) -> check if Key exists in FONT-SIZE BREAKPOINTS
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint); //If it does -> Get value of the Key in the FONT-SIZE BREAKPOINTS MAP
+      }
+      @media screen and (max-width: $fs-breakpoint) {             //Then Assign that value to a Media Query
+        font-size: $fs-font-size;                                 //Assign a Font Size, with a value of the corresponding key name in the FONT-SIZE MAP
+      }
+    }
+  }
+}
+
+// ===== Usage ===== //
+//@include font-size($p-font-sizes);
+//@include font-size($h1-font-sizes);
+//@include font-size($h2-font-sizes);
+//@include font-size($h3-font-sizes);
+
+
+
+/// **** HEADING FONT STYLES **** ///
+@mixin heading-base{
+    font-family: $font-family;
+    font-weight: $fw-bold;
+    color: $heading-color;
+    line-height: 1.5
+}
+
+@mixin heading($style) {
+    @if $style == "main" {
+        @include heading-base;
+        @include font-size($h1-font-sizes);
+    }
+
+    @else if $style == "sub" {
+        @include heading-base;
+        @include font-size($h2-font-sizes);
+    }
+}
+
+// ===== Usage ===== //
+.heading--primary{
+  @include heading(main);
+}
+
+.heading--secondary{
+  @include heading(sub);
+}
+
+
+/// **** BODY FONT STYLES **** ///
+@mixin body-base{
+  @include font-size($p-font-sizes);
+  font-family: $font-family;
+  font-weight: $fw-normal;
+  line-height: 1.5;
+}
+
+@mixin body($style) {
+  @if $style == "main" {
+    @include body-base;
+    color: $body-main-color;
+  }
+
+  @else if $style == "bold" {
+    @include body-base;
+    font-weight:$fw-bold;
+    color: $body-main-color;
+  }
+}
+
+// ===== Usage ===== //
+.body--main{
+  @include body(main);
+}
+
+.body--bold{
+  @include body(bold);
+}
+
+
