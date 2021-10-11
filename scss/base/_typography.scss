@@ -46,7 +46,7 @@ $cta-font-sizes: (
 )!default;
 
 $nav-link-font-sizes: (
-  large : 3rem,      //48px
+  large : 4rem,      //64px
   medium: 3rem,      //48px
   small : 1.5rem     //24px
 )!default;
@@ -150,7 +150,7 @@ $nav-link-font-sizes: (
   font-weight: $fw-black;
 }
 
-.nav__txt{
+.nav__links{
   @include font-base;
   @include font-size($nav-link-font-sizes);
   font-weight: $fw-black;

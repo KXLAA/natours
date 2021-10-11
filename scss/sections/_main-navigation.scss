@@ -1,0 +1,39 @@
+.nav{
+    color: $nav-link-color;
+    background-color:$nav-bg-color;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+
+    &__container{
+        @include layout-container-fluid;
+        @include flex($direction: column)
+    }
+
+    &__logo{
+        padding-bottom:2rem;
+        border-bottom: .5rem solid white;
+    }
+
+    &__main{
+        list-style: none;
+        padding: 0rem;
+        margin: 0rem;
+        @include flex();
+        padding-top:1.5rem;
+    }
+
+    &__link{
+        transition: all 0.3s ease;
+    }
+
+    &__link:hover{
+        text-decoration: underline;
+        color: $hover-active-color;
+    }
+
+    &__link:active{
+        text-decoration: underline;
+        color: $hover-active-color;
+        transform: translateX(0rem) translateY(.225rem);
+    }
+}

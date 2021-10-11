@@ -172,19 +172,19 @@ select {
   }
 }
 
-.nav__txt {
+.nav__links {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 900;
 }
 @media screen and (max-width: 700px) {
-  .nav__txt {
+  .nav__links {
     font-size: 3rem;
   }
 }
 @media screen and (max-width: 480px) {
-  .nav__txt {
+  .nav__links {
     font-size: 1.5rem;
   }
 }
@@ -264,4 +264,79 @@ select {
   transition: all 0.3s ease;
   display: block !important;
   width: 100% !important;
+}
+
+.nav {
+  color: #FFFFFF;
+  background-color: #1E1D1D;
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+}
+.nav__container {
+  margin: 0 2rem;
+  max-width: 100%;
+  padding: 0rem 1rem 0rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 992px) {
+  .nav__container {
+    margin: 0 1rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .nav__container {
+    margin: 0 0.5rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+  }
+}
+.nav__logo {
+  padding-bottom: 2rem;
+  border-bottom: 0.5rem solid white;
+}
+.nav__main {
+  list-style: none;
+  padding: 0rem;
+  margin: 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+.nav__link {
+  transition: all 0.3s ease;
+}
+.nav__link:hover {
+  text-decoration: underline;
+  color: #501EC4;
+}
+.nav__link:active {
+  text-decoration: underline;
+  color: #501EC4;
+  transform: translateX(0rem) translateY(0.225rem);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 9.5rem;
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero {
+    margin-bottom: 2rem;
+  }
+}
+.hero__img {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.hero__img:hover {
+  filter: sepia(77%);
 }/*# sourceMappingURL=main.css.map */
