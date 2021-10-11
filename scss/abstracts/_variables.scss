@@ -10,11 +10,12 @@
 
 
 // Functional naming 
-    //Buttons
+    //Buttons & Links
     $button-primary-color:$color-cod-gray;
     $button-primary-bg-color:$color-white;
     $button-secondary-color:$color-white;
     $button-secondary-bg-color:$color-purple-heart;
+    $hover-active-color:$color-purple-heart;
 
     //Font
     $heading-color: $color-cod-gray;
@@ -22,6 +23,7 @@
     $body-main-color: $color-cod-gray;
     $body-main-color--w: $color-cod-gray;
     $border-color:$color-cod-gray;
+    $border-color--w:$color-cod-gray;
     $input-placeholder:$color-tundora;
 
     //Cta
