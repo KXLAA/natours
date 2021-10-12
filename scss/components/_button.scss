@@ -1,8 +1,9 @@
 @mixin button-base{
     display: inline-block;
+    width: 15rem;
     text-decoration:none;
-    border-radius: .3125rem;
-    padding: 1.125rem 1.5rem;
+    border-radius: 100rem;
+    padding: 1rem 2.25rem;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -15,6 +16,9 @@
 
 .button--primary{
     @include button-base;
+    margin: 0 auto;
+    @include flex($justify-content: center, $align-items: center);
+    gap: .5rem;
     color:$button-primary-color;
     background:$button-primary-bg-color;
 

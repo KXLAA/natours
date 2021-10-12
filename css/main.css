@@ -84,9 +84,10 @@ select {
 }
 .heading--primary {
   font-family: "Inter", sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   color: #1E1D1D;
   line-height: 1.5;
+  text-align: center;
 }
 @media screen and (max-width: 1440px) {
   .heading--primary {
@@ -106,7 +107,7 @@ select {
 
 .heading--secondary {
   font-family: "Inter", sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   color: #1E1D1D;
   line-height: 1.5;
 }
@@ -237,7 +238,7 @@ select {
   font-weight: 400;
 }
 
-.pricing__card--tag {
+.pricing__card--title {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
   font-weight: 700;
@@ -248,7 +249,7 @@ select {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
 }
 
 .bold {
@@ -261,11 +262,18 @@ select {
 
 .button--primary {
   display: inline-block;
+  width: 15rem;
   text-decoration: none;
-  border-radius: 0.3125rem;
-  padding: 1.125rem 1.5rem;
+  border-radius: 100rem;
+  padding: 1rem 2.25rem;
   text-align: center;
   transition: all 0.3s ease;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   color: #1E1D1D;
   background: #FFFFFF;
 }
@@ -280,9 +288,10 @@ select {
 
 .button--secondary {
   display: inline-block;
+  width: 15rem;
   text-decoration: none;
-  border-radius: 0.3125rem;
-  padding: 1.125rem 1.5rem;
+  border-radius: 100rem;
+  padding: 1rem 2.25rem;
   text-align: center;
   transition: all 0.3s ease;
   color: #FFFFFF;
@@ -299,9 +308,10 @@ select {
 
 .button--full-width {
   display: inline-block;
+  width: 15rem;
   text-decoration: none;
-  border-radius: 0.3125rem;
-  padding: 1.125rem 1.5rem;
+  border-radius: 100rem;
+  padding: 1rem 2.25rem;
   text-align: center;
   transition: all 0.3s ease;
   display: block !important;
@@ -469,4 +479,137 @@ select {
 }
 .benefits__txt {
   color: #FFFFFF;
+}
+
+.gallery {
+  margin-bottom: 9.5rem;
+}
+@media screen and (max-width: 768px) {
+  .gallery {
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .gallery {
+    margin-bottom: 2rem;
+  }
+}
+.gallery__img-container--1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.gallery__img {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.gallery__heading {
+  background-color: #1E1D1D;
+  color: #FFFFFF;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.gallery__img-container--2 {
+  position: relative;
+}
+.gallery__logo {
+  display: none;
+  position: absolute;
+  left: 80%;
+}
+
+.pricing {
+  margin: 0 2rem;
+  max-width: 100%;
+  padding: 0rem 1rem 0rem 1rem;
+  margin-bottom: 9.5rem;
+}
+@media screen and (max-width: 992px) {
+  .pricing {
+    margin: 0 1rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pricing {
+    margin: 0 0.5rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pricing {
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pricing {
+    margin-bottom: 2rem;
+  }
+}
+.pricing__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.pricing__card {
+  color: #FFFFFF;
+  border-radius: 3px;
+  background-color: #1E1D1D;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 3rem;
+}
+.pricing__card-img-container {
+  position: relative;
+}
+.pricing__card-title {
+  color: #1E1D1D;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 180%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 3.125rem;
+  padding: 0.5rem 1.5rem;
+  width: 264px;
+}
+.pricing__card-img {
+  width: 100%;
+}
+.pricing__price {
+  text-align: center;
+}
+.pricing__features {
+  text-align: center;
+  list-style: none;
+  margin: 0rem;
+  padding: 0rem;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+.pricing__feature {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.pricing__btn-img {
+  width: 30%;
+}
+.pricing__link {
+  margin-top: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.pricing__link-img {
+  width: 6rem;
+  height: 6rem;
 }/*# sourceMappingURL=main.css.map */

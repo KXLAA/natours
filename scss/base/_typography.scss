@@ -90,15 +90,17 @@ $nav-link-font-sizes: (
 /// **** HEADING FONT STYLES **** ///
 @mixin heading-base{
     font-family: $font-family;
-    font-weight: $fw-bold;
+    font-weight: $fw-black;
     color: $heading-color;
-    line-height: 1.5
+    line-height: 1.5;
 }
 
 @mixin heading($style) {
     @if $style == "main" {
         @include heading-base;
         @include font-size($h1-font-sizes);
+        text-align: center;
+
     }
 
     @else if $style == "sub" {
@@ -177,7 +179,7 @@ $nav-link-font-sizes: (
   font-weight: $fw-normal;
 }
 
-.pricing__card--tag{
+.pricing__card--title{
   @include font-base;
   font-weight: $fw-bold;
   font-size: 1.25rem;
@@ -186,7 +188,7 @@ $nav-link-font-sizes: (
 .button__txt{
   @include font-base;
   font-weight: $fw-bold;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
 }
 .bold{
   font-weight: $fw-bold;
