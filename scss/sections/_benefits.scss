@@ -1,0 +1,35 @@
+.benefits{
+    @include layout-spacing;
+    background-color: $benefits-bg-color;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    
+    &__container{
+        @include layout-container-fluid;
+    }
+
+    &__card{
+        border: 10px solid $border-color--w;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+    }
+
+    &__card:first-child {
+        margin-top: 0rem;
+    }
+
+    &__card:last-child {
+        margin-bottom: 0rem;
+    }
+
+    &__heading{
+        color: $heading-color--w;
+    }
+
+    &__txt{
+        color: $body-main-color--w;
+    }
+
+
+}

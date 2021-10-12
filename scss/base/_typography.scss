@@ -17,14 +17,26 @@ $fw-black:           900;
 $font-size-breakpoints: (
   small : 480px,
   medium: 700px, 
+  large : 1440px,
+  x-large : 1450px
 )!default;
 
 //FONT-SIZE MAPS [fs-map]
 $p-font-sizes: (
+  x-large : 4.5rem, //72px
   large : 3rem,     //48px
   medium: 1.875rem, //30px
   small : 1.5rem,   //24px
 )!default;
+
+
+
+
+
+
+
+
+
 
 $h1-font-sizes: (
   large : 6rem,      //96px
@@ -51,23 +63,20 @@ $nav-link-font-sizes: (
   small : 1.5rem     //24px
 )!default;
 
-
-
 @mixin font-size($fs-map, $fs-breakpoints: $font-size-breakpoints) {
-  @each $fs-breakpoint, $fs-font-size in $fs-map { //For each Key & Value in FONT-SIZE MAP
-    @if $fs-breakpoint == large { //If the Font Size's map Key is === large -> Font Size would be value of null Key
-      font-size: $fs-font-size;
-    }
-    @else {
-      // If $fs-font-size value [eg 17px] has a key name that exists in FONT-SIZE BREAKPOINTS MAP, use the value in that FONT-SIZE BREAKPOINTS MAP
-      @if map-has-key($fs-breakpoints, $fs-breakpoint) {          //(map-name, map-key) -> check if Key exists in FONT-SIZE BREAKPOINTS
-        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint); //If it does -> Get value of the Key in the FONT-SIZE BREAKPOINTS MAP
+  @each $key, $value in $fs-map { 
+      @if map-has-key($fs-breakpoints, $key){
+          $breakpoint: map-get($fs-breakpoints, $key);
+
+          @if $key == x-large { 
+              @media screen and (min-width: map-get($fs-breakpoints, $key)) {  font-size: $value; }                              
+          }
+          @else {
+              @media screen and (max-width: map-get($fs-breakpoints, $key)) {  font-size: $value; }
+          }
       }
-      @media screen and (max-width: $fs-breakpoint) {             //Then Assign that value to a Media Query
-        font-size: $fs-font-size;                                 //Assign a Font Size, with a value of the corresponding key name in the FONT-SIZE MAP
-      }
-    }
-  }
+ }
+   
 }
 
 // ===== Usage ===== //
@@ -178,5 +187,12 @@ $nav-link-font-sizes: (
   @include font-base;
   font-weight: $fw-bold;
   font-size: 1.25rem;
+}
+.bold{
+  font-weight: $fw-bold;
+}
+
+.underline{
+  text-decoration: underline;
 }
 
