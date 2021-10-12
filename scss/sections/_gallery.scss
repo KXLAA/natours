@@ -1,0 +1,33 @@
+.gallery{
+    @include layout-spacing;
+    
+    &__img-container--1{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__img{
+        width: 100%;
+        @include flex()
+    }
+
+    &__heading{
+        background-color: $gallery-bg-color;
+        color: $heading-color--w;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__img-container--2{
+        position: relative;
+    }
+
+    &__logo{
+        display: none;
+        position: absolute;
+        left: 80%;
+       
+    }
+
+}
