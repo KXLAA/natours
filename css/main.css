@@ -505,11 +505,36 @@ select {
   flex-direction: row;
   justify-content: space-between;
 }
-.gallery__heading {
+.gallery__heading-container {
   background-color: #1E1D1D;
   color: #FFFFFF;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.gallery__heading {
+  text-align: left;
+  color: #FFFFFF;
+  position: relative;
+  -webkit-animation: move 8s linear 1s infinite;
+          animation: move 8s linear 1s infinite;
+}
+@-webkit-keyframes move {
+  from {
+    transform: translateX(-90vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+@keyframes move {
+  from {
+    transform: translateX(-90vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
 .gallery__img-container--2 {
   position: relative;

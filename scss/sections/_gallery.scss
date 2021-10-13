@@ -12,11 +12,29 @@
         @include flex()
     }
 
-    &__heading{
+    &__heading-container{
         background-color: $gallery-bg-color;
         color: $heading-color--w;
         padding-top: 2rem;
         padding-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__heading{
+        text-align: left;
+        color: $heading-color--w;
+        position: relative;
+        animation: move 8s linear 1s infinite;
+    }
+
+    @keyframes move {
+        from {
+          transform: translateX(-90vw);
+        }
+        to {
+          transform: translateX(100vw);
+        }
     }
 
     &__img-container--2{
