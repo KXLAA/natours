@@ -685,13 +685,17 @@ select {
   border: none;
 }
 .cta__btn {
-  height: 5.5rem;
+  font-size: 4rem;
   border: none;
-  background-color: #fff;
+  background-color: #FFFFFF;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   padding-left: 1rem;
   padding-right: 1rem;
+  color: #474747;
+}
+.cta__btn:hover {
+  color: #501EC4;
 }
 
 ::-moz-placeholder {

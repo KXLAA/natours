@@ -30,20 +30,25 @@
     }
 
     &__btn{
-        height: 5.5rem;
+        font-size: 4rem;
         border: none;
-        background-color: #fff;
+        background-color: $cta-btn-bg-color;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         padding-left: 1rem;
         padding-right: 1rem;
-
+        color: $cta-btn-color;
     }
+
+    &__btn:hover{
+        color: $hover-active-color;
+    }
+
 }
 
 ::placeholder { 
     font-size: 2.25rem;
-    color: #474747;
+    color: $cta-placeholder-color;
     padding: 2rem;
 }
 
