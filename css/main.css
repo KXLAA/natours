@@ -637,4 +637,154 @@ select {
 .pricing__link-img {
   width: 6rem;
   height: 6rem;
+}
+
+.cta {
+  background-color: #474747;
+}
+.cta__container {
+  margin: 0 2rem;
+  max-width: 100%;
+  padding: 0rem 1rem 0rem 1rem;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3rem;
+}
+@media screen and (max-width: 992px) {
+  .cta__container {
+    margin: 0 1rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cta__container {
+    margin: 0 0.5rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+  }
+}
+.cta__heading {
+  color: #FFFFFF;
+  line-height: 1;
+}
+.cta__input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  border: none;
+  height: 5.5rem;
+  border-top-left-radius: 0.3125rem;
+  border-bottom-left-radius: 0.3125rem;
+}
+.cta__input {
+  width: 100%;
+  box-shadow: none;
+  border: none;
+}
+.cta__btn {
+  height: 5.5rem;
+  border: none;
+  background-color: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+::-moz-placeholder {
+  font-size: 2.25rem;
+  color: #474747;
+  padding: 2rem;
+}
+
+:-ms-input-placeholder {
+  font-size: 2.25rem;
+  color: #474747;
+  padding: 2rem;
+}
+
+::placeholder {
+  font-size: 2.25rem;
+  color: #474747;
+  padding: 2rem;
+}
+
+.slideshow {
+  background-color: #1E1D1D;
+}
+.slideshow__container {
+  margin: 0 2rem;
+  max-width: 100%;
+  padding: 0rem 1rem 0rem 1rem;
+  padding-top: 6.5rem;
+  padding-bottom: 9.5rem;
+}
+@media screen and (max-width: 992px) {
+  .slideshow__container {
+    margin: 0 1rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .slideshow__container {
+    margin: 0 0.5rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+  }
+}
+.slideshow__btns {
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.slideshow__btn {
+  color: white;
+  font-size: 4rem;
+}
+.slideshow__btn:last-child {
+  margin-left: 1rem;
+}
+.slideshow__images {
+  width: 100%;
+}
+.slideshow__img {
+  width: 100%;
+}
+
+.footer {
+  background-color: #1E1D1D;
+  color: #FFFFFF;
+}
+.footer__container {
+  margin: 0 2rem;
+  max-width: 100%;
+  padding: 0rem 1rem 0rem 1rem;
+  padding-bottom: 9.5rem;
+}
+@media screen and (max-width: 992px) {
+  .footer__container {
+    margin: 0 1rem;
+    padding: 0rem 1rem 0rem 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer__container {
+    margin: 0 0.5rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+  }
+}
+.footer__logo {
+  width: 100%;
+  padding-bottom: 6.5rem;
+}
+.footer__nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }/*# sourceMappingURL=main.css.map */

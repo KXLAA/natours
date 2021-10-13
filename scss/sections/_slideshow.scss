@@ -1,0 +1,31 @@
+.slideshow{
+    background-color:$slide-show-bg-color;
+
+    &__container{
+        @include layout-container-fluid;
+        padding-top: 6.5rem;
+        padding-bottom: 9.5rem;
+    }
+
+    &__btns{
+        padding-bottom: 1rem;
+        @include flex($justify-content: flex-end);
+    }
+
+    &__btn{
+        color: white;
+        font-size: 4rem;
+    }
+
+    &__btn:last-child{
+        margin-left: 1rem;
+    }
+
+    &__images{
+        width: 100%;
+    }
+
+    &__img{
+        width: 100%;
+    }
+}
