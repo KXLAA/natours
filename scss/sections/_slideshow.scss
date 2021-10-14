@@ -10,26 +10,58 @@
     &__btns{
         padding-bottom: 1rem;
         @include flex($justify-content: flex-end);
+        position: relative;
     }
 
     &__btn{
         color: white;
         font-size: 4rem;
+        cursor: pointer;
+        
+    }
+
+    &__btn:hover{
+        color: $hover-active-color;
+    }
+
+    &__btn:first-child:hover{
+        transform: translateX(-30px);
+        position: absolute;
+        font-size: 10rem;
+        padding-right: 4rem;
+    }
+
+    &__btn:first-child:active{
+        transform: translateX(-50px);
     }
 
     &__btn:last-child{
         margin-left: 1rem;
     }
 
+    &__btn:last-child:hover{
+        transform: translateX(30px);
+        position: absolute;
+        font-size: 10rem;
+        padding-right: 4rem;
+    }
+
+    &__btn:last-child:active{
+        transform: translateX(50px);
+    }
+
     &__images{
         width: 100%;
+        transition: all 0.5s ease-in-out;
     }
 
     &__img{
         width: 100%;
+        display: none;
     }
 }
 
-.hidden{
-    display: none;
+
+.active{
+    display: block;
 }

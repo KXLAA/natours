@@ -743,23 +743,48 @@ select {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  position: relative;
 }
 .slideshow__btn {
   color: white;
   font-size: 4rem;
+  cursor: pointer;
+}
+.slideshow__btn:hover {
+  color: #501EC4;
+}
+.slideshow__btn:first-child:hover {
+  transform: translateX(-30px);
+  position: absolute;
+  font-size: 10rem;
+  padding-right: 4rem;
+}
+.slideshow__btn:first-child:active {
+  transform: translateX(-50px);
 }
 .slideshow__btn:last-child {
   margin-left: 1rem;
 }
+.slideshow__btn:last-child:hover {
+  transform: translateX(30px);
+  position: absolute;
+  font-size: 10rem;
+  padding-right: 4rem;
+}
+.slideshow__btn:last-child:active {
+  transform: translateX(50px);
+}
 .slideshow__images {
   width: 100%;
+  transition: all 0.5s ease-in-out;
 }
 .slideshow__img {
   width: 100%;
+  display: none;
 }
 
-.hidden {
-  display: none;
+.active {
+  display: block;
 }
 
 .footer {
