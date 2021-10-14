@@ -758,6 +758,10 @@ select {
   width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 .footer {
   background-color: #1E1D1D;
   color: #FFFFFF;
