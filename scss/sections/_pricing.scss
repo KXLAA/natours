@@ -59,8 +59,16 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
 
-    &__btn-img{
-        width: 30%;
+    &__btn-arrow{
+        @include respond-to(xl){
+            font-size: 5.5rem;
+        }
+        font-size: 3.5rem;
+        margin-left: 1rem;
+    }
+
+    &__btn-arrow--lg{
+        font-size: 6rem;
     }
 
     &__link{

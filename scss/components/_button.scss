@@ -1,9 +1,12 @@
 @mixin button-base{
     display: inline-block;
-    width: 15rem;
+    @include respond-to(xl){
+        width: 25rem;
+    }
+    width: 17rem;
     text-decoration:none;
     border-radius: 100rem;
-    padding: 1rem 2.25rem;
+    padding: 1.5rem 0rem;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -18,7 +21,6 @@
     @include button-base;
     margin: 0 auto;
     @include flex($justify-content: center, $align-items: center);
-    gap: .5rem;
     color:$button-primary-color;
     background:$button-primary-bg-color;
 

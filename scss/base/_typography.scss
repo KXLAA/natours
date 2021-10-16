@@ -17,8 +17,8 @@ $fw-black:           900;
 $font-size-breakpoints: (
   small : 480px,
   medium: 700px, 
-  large : 1440px,
-  x-large : 1450px
+  large : 1919px,
+  x-large : 1920px
 )!default;
 
 //FONT-SIZE MAPS [fs-map]
@@ -30,15 +30,8 @@ $p-font-sizes: (
 )!default;
 
 
-
-
-
-
-
-
-
-
 $h1-font-sizes: (
+  x-large : 8rem, //128px
   large : 6rem,      //96px
   medium: 4rem,      //64px
   small : 2rem       //32px
@@ -52,6 +45,7 @@ $h2-font-sizes: (
 
 
 $cta-font-sizes: (
+  x-large : 10rem,      //160px
   large : 7.5rem,      //120px
   medium: 7.5rem,      //120px
   small : 4.5rem       //72px
@@ -168,12 +162,20 @@ $nav-link-font-sizes: (
 }
 
 .pricing__price--txt{
+  @include respond-to(xl){
+    font-size: 56px;
+
+  }
   @include font-base;
   font-weight: $fw-bold;
   font-size: 3rem;
 }
 
 .pricing__features--txt{
+  @include respond-to(xl){
+    font-size: 32px;
+
+  }
   @include font-base;
   font-size: 24px;
   font-weight: $fw-normal;
@@ -186,6 +188,9 @@ $nav-link-font-sizes: (
 }
 
 .button__txt{
+  @include respond-to(xl){
+    font-size: 3.5rem;
+  }
   @include font-base;
   font-weight: $fw-bold;
   font-size: 2.5rem;
