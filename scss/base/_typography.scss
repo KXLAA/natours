@@ -13,124 +13,96 @@ $fw-bold:            700;
 $fw-xtra-bold:       800;
 $fw-black:           900;
 
-//FONT-SIZE BREAKPOINTS [fs-breakpoints]
-$font-size-breakpoints: (
-  small : 480px,
-  medium: 700px, 
-  large : 1919px,
-  x-large : 1920px
-)!default;
-
-//FONT-SIZE MAPS [fs-map]
-$p-font-sizes: (
-  x-large : 4.5rem, //72px
-  large : 3rem,     //48px
-  medium: 1.875rem, //30px
-  small : 1.5rem,   //24px
-)!default;
-
-
-$h1-font-sizes: (
-  x-large : 8rem, //128px
-  large : 6rem,      //96px
-  medium: 4rem,      //64px
-  small : 2rem       //32px
-)!default;
-
-$h2-font-sizes: (
-  large : 4rem,      //64px
-  medium: 2rem,      //32px
-  small : 1.5rem     //24px
-)!default;
-
-
-$cta-font-sizes: (
-  x-large : 10rem,      //160px
-  large : 7.5rem,      //120px
-  medium: 7.5rem,      //120px
-  small : 4.5rem       //72px
-)!default;
-
-$nav-link-font-sizes: (
-  large : 4rem,      //64px
-  medium: 3rem,      //48px
-  small : 1.5rem     //24px
-)!default;
-
-@mixin font-size($fs-map, $fs-breakpoints: $font-size-breakpoints) {
-  @each $key, $value in $fs-map { 
-      @if map-has-key($fs-breakpoints, $key){
-          $breakpoint: map-get($fs-breakpoints, $key);
-
-          @if $key == x-large { 
-              @media screen and (min-width: map-get($fs-breakpoints, $key)) {  font-size: $value; }                              
-          }
-          @else {
-              @media screen and (max-width: map-get($fs-breakpoints, $key)) {  font-size: $value; }
-          }
-      }
- }
-   
-}
-
-// ===== Usage ===== //
-//@include font-size($p-font-sizes);
-//@include font-size($h1-font-sizes);
-//@include font-size($h2-font-sizes);
-//@include font-size($h3-font-sizes);
-
-
 
 /// **** HEADING FONT STYLES **** ///
 @mixin heading-base{
-    font-family: $font-family;
-    font-weight: $fw-black;
-    color: $heading-color;
-    line-height: 1.5;
+  font-family: $font-family;
+  font-weight: $fw-black;
+  color: $heading-color;
 }
 
 @mixin heading($style) {
-    @if $style == "main" {
-        @include heading-base;
-        @include font-size($h1-font-sizes);
-        text-align: center;
+  @if $style == "main" {
+      @include heading-base;
+      @include respond-to(xl){
+        font-size: 8rem;
+        line-height: 10.5rem;
+      }
+      @include respond-to(lg){
+        font-size: 6rem;
+        line-height: 8rem;
+      }
+      @include respond-to(sm){
 
-    }
+      }
+      @include respond-to(xs){
 
-    @else if $style == "sub" {
-        @include heading-base;
-        @include font-size($h2-font-sizes);
-    }
+      }
+
+  }
+
+  @else if $style == "sub" {
+      @include heading-base;
+      @include respond-to(xl){
+        font-size: 6.75rem;
+        line-height: 9rem;
+      }
+      @include respond-to(lg){
+        font-size: 4rem;
+        line-height: 5.5rem;
+      }
+      @include respond-to(sm){
+        font-size: 2.25rem;
+        line-height: 3rem;
+      }
+      @include respond-to(xs){
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+  }
 }
 
 // ===== Usage ===== //
 .heading--primary{
   @include heading(main);
 }
-
 .heading--secondary{
   @include heading(sub);
 }
 
-
 /// **** BODY FONT STYLES **** ///
+
+//Main-Body
 @mixin body-base{
-  @include font-size($p-font-sizes);
   font-family: $font-family;
-  font-weight: $fw-normal;
-  line-height: 1.5;
+  color: $body-main-color;
+  @include respond-to(xl){
+    font-size: 4.5rem;
+    line-height: 6rem;
+  }
+  @include respond-to(lg){
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  @include respond-to(sm){
+    font-size: 1.875rem;
+    line-height: 3rem;
+  }
+  @include respond-to(xs){
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
 }
 
 @mixin body($style) {
   @if $style == "main" {
     @include body-base;
-    color: $body-main-color;
+    font-weight: $fw-normal;
   }
 
   @else if $style == "bold" {
     @include body-base;
     font-weight:$fw-bold;
-    color: $body-main-color;
   }
 }
 
@@ -143,58 +115,140 @@ $nav-link-font-sizes: (
   @include body(bold);
 }
 
-/// **** OTHER FONT STYLES **** ///
-@mixin font-base{
-  font-family: $font-family;
-  line-height: 1.5;
-}
 
-.cta__txt{
-  @include font-base;
-  @include font-size($cta-font-sizes);
-  font-weight: $fw-black;
-}
-
+//Navigation
 .nav__links{
-  @include font-base;
-  @include font-size($nav-link-font-sizes);
+  font-family: $font-family;
   font-weight: $fw-black;
-}
-
-.pricing__price--txt{
   @include respond-to(xl){
-    font-size: 56px;
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+  @include respond-to(lg){
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+  @include respond-to(sm){
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  @include respond-to(xs){
 
   }
-  @include font-base;
-  font-weight: $fw-bold;
-  font-size: 3rem;
+}
+
+//Cta
+.cta__txt{
+  font-family: $font-family;
+  font-weight: $fw-black;
+  @include respond-to(xl){
+    font-size: 10rem;
+    line-height: 9rem;
+  }
+  @include respond-to(lg){
+    font-size: 7.5rem;
+    line-height: 6.5rem;
+  }
+  @include respond-to(sm){
+
+  }
+  @include respond-to(xs){
+ 
+  }
+}
+
+//Pricing
+@mixin pricing($style) {
+  font-family: $font-family;
+  @if $style == "price--txt" {
+    font-weight: $fw-bold;
+    @include respond-to(xl){
+      font-size: 4rem;
+      line-height: 5.5rem;
+    }
+    @include respond-to(lg){
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+    @include respond-to(sm){
+
+    }
+    @include respond-to(xs){
+
+    }
+  }
+
+  @else if $style == "features--txt" {
+    font-weight: $fw-normal;
+    @include respond-to(xl){
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+    @include respond-to(lg){
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    @include respond-to(sm){
+
+    }
+    @include respond-to(xs){
+
+    }
+    
+  }
+
+  @else if $style == "card--title" {
+    font-weight: $fw-bold;
+    @include respond-to(xl){
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    @include respond-to(lg){
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+    @include respond-to(sm){
+
+    }
+    @include respond-to(xs){
+
+    }
+    
+  }
+}
+
+// ===== Usage ===== //
+.pricing__price--txt{
+  @include pricing(price--txt);
 }
 
 .pricing__features--txt{
-  @include respond-to(xl){
-    font-size: 32px;
-
-  }
-  @include font-base;
-  font-size: 24px;
-  font-weight: $fw-normal;
+  @include pricing(features--txt);
 }
 
 .pricing__card--title{
-  @include font-base;
-  font-weight: $fw-bold;
-  font-size: 1.25rem;
+  @include pricing(card--title);
 }
 
+//Buttons
 .button__txt{
-  @include respond-to(xl){
-    font-size: 3.5rem;
-  }
-  @include font-base;
   font-weight: $fw-bold;
-  font-size: 2.5rem;
+  @include respond-to(xl){
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+  @include respond-to(lg){
+    font-size: 2.25rem;
+    line-height: 3rem;
+  }
+  @include respond-to(sm){
+
+  }
+  @include respond-to(xs){
+  }
 }
+
+//Utilities
 .bold{
   font-weight: $fw-bold;
 }
