@@ -16,7 +16,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
-        @include flex()
+        @include flex-justify(space-between);
     }
 
     &__nav-link{

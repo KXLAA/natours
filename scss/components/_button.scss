@@ -20,7 +20,7 @@
 .button--primary{
     @include button-base;
     margin: 0 auto;
-    @include flex($justify-content: center, $align-items: center);
+    @include flex-center;
     color:$button-primary-color;
     background:$button-primary-bg-color;
 

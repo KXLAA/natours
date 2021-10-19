@@ -6,7 +6,7 @@
 
     &__container{
         @include layout-container-fluid;
-        @include flex($direction: column)
+        @include flex(column);
     }
 
     &__logo{
@@ -19,7 +19,7 @@
         list-style: none;
         padding: 0rem;
         margin: 0rem;
-        @include flex();
+        @include flex-justify(space-between);
         padding-top:1.5rem;
     }
 

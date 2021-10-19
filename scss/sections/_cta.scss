@@ -10,7 +10,7 @@
         @include layout-container-fluid;
         padding-top: 7.5rem;
         padding-bottom: 7.5rem;
-        @include flex();
+        @include flex-justify(space-between);
     }
 
     &__heading{
@@ -23,7 +23,7 @@
     }
 
     &__input-container{
-        @include flex();
+        @include flex-justify(space-between);
         align-self: center;
         border: none;
         height: 5.5rem;
@@ -32,7 +32,6 @@
     }
 
     &__input{
-
         width: 100%;
         box-shadow: none;
         border: none;
