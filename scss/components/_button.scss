@@ -1,8 +1,23 @@
+/// **** BUTTON SPECIFIC TYPOGRAPHY **** ///
+$button-font-sizes: (
+  x-large:   (2.5rem, 3.5rem),   //font size: 40px  line Height: 56px
+  large :    (2.25rem, 3rem),    //font size: 36px  line Height: 48px
+  medium:    (1.75rem, 2.5rem),  //font size: 28px  line Height: 40px
+  small:    (1.75rem, 2.5rem),  //font size: 28px  line Height: 40px
+)!default;
+
+@mixin button-txt{
+    font-family: $font-family;
+    font-weight: $fw-bold;
+    color: $body-main-color--w;;
+    @include font-size($button-font-sizes);
+}
+
+
+/// **** BUTTON STYLES **** ///
 @mixin button-base{
+    @include button-txt;
     display: inline-block;
-    @include respond-to(xl){
-        width: 25rem;
-    }
     width: 17rem;
     text-decoration:none;
     border-radius: 100rem;
@@ -33,29 +48,5 @@
         background:darken($button-primary-bg-color, 25%);
         transform: translateX(0rem) translateY(.125rem);
     } 
-}
-
-// ===== Usage ===== //
-
-.button--secondary{
-    @include button-base;
-    color:$button-secondary-color;
-    background:$button-secondary-bg-color;
-
-    &:hover {
-        background:darken($button-secondary-bg-color, 8%);
-        transform: translateX(0rem) translateY(-0.3125rem);
-    }
-
-    &:active {
-        background:darken($button-secondary-bg-color, 25%);
-        transform: translateX(0rem) translateY(.125rem);
-    } 
-}
-
-
-
-.button--full-width{
-    @include full-width-button;
 }
 

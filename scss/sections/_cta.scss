@@ -1,4 +1,22 @@
+/// **** CTA SPECIFIC TYPOGRAPHY **** ///
+$cta-font-sizes: (
+  x-large:   (10rem, 9rem),     //font size: 160px  line Height: 144px
+  large :    (7.5rem, 6.5rem),  //font size: 120px  line Height: 104px
+  medium:    (7.5rem, 6.5rem),  //font size: 120px  line Height: 104px
+  small :    (4.5rem, 4.5rem),  //font size: 72px  line Height: 72px
+)!default;
+
+@mixin cta-heading{
+    font-family: $font-family;
+    font-weight: $fw-black;
+    color: $body-main-color--w;;
+    @include font-size($cta-font-sizes);
+}
+
+
+/// **** CTA STYLES **** ///
 .cta{
+    @include cta-heading;
     background-color: $cta-bg-color;
 
     &__container{

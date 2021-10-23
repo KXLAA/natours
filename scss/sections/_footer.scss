@@ -1,4 +1,22 @@
+/// **** NAVIGATION SPECIFIC TYPOGRAPHY **** ///
+$footer-font-sizes: (
+  x-large:   (6rem, 8rem),      //font size: 96px  line Height: 128px
+  large :    (3rem, 4rem),      //font size: 48px  line Height: 64px
+  medium:    (2.25rem, 3rem),   //font size: 36px  line Height: 48px
+  small :    (1.25rem, 2rem),   //font size: 20px  line Height: 32px
+)!default;
+
+@mixin footer-links{
+    font-family: $font-family;
+    font-weight: $fw-black;
+    color: $nav-link-color;
+    @include font-size($footer-font-sizes);
+}
+  
+
+/// **** FOOTER STYLES **** ///
 .footer{
+    @include footer-links;
     background-color: $footer-bg-color;
     color: $body-main-color--w;
 

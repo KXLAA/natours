@@ -1,3 +1,60 @@
+/// **** PRICING SPECIFIC TYPOGRAPHY **** ///
+$pricing-price-fs: (
+  x-large:   (4rem, 5.5rem),     //font size: 64px  line Height: 88px
+  large :    (3rem, 4rem),       //font size: 48px  line Height: 64px
+  medium:    (2.25rem, 3rem),    //font size: 36px  line Height: 48px
+  small:    (2.25rem, 3rem)    //font size: 36px  line Height: 48px
+)!default;
+
+$pricing-features-fs: (
+  x-large:   (2rem, 3rem),       //font size: 32px  line Height: 48px
+  large :    (1.4375rem, 2rem),  //font size: 23px  line Height: 32px
+  medium:    (1.25rem, 2rem),    //font size: 20px  line Height: 32px
+  small :    (1.25rem, 2rem)     //font size: 20px  line Height: 32px
+)!default;
+
+$pricing-card-title-fs: (
+  x-large:   (1.5rem, 2rem),       //font size: 24px  line Height: 32px
+  large :    (1.25rem, 2rem),       //font size: 20px  line Height: 32px
+  medium:    (1.125rem, 1.5rem),    //font size: 18px  line Height: 24px
+  small :    (1.125rem, 1.5rem),    //font size: 18px  line Height: 24px
+)!default;
+
+
+@mixin pricing($style) {
+    font-family: $font-family;
+    @if $style == "price--txt" {
+        font-weight: $fw-bold;
+        @include font-size($pricing-price-fs);
+    }
+  
+    @else if $style == "features--txt" {
+        font-weight: $fw-normal;
+        @include font-size(pricing-features-fs);
+      
+    }
+  
+    @else if $style == "card--title" {
+        font-weight: $fw-bold;
+        @include font-size($pricing-card-title-fs);
+    }
+  }
+
+// ===== Usage ===== //
+.pricing__price--txt{
+    @include pricing(price--txt);
+  }
+  
+  .pricing__features--txt{
+    @include pricing(features--txt);
+  }
+  
+  .pricing__card--title{
+    @include pricing(card--title);
+  }
+
+
+/// **** PRICING STYLES **** ///
 .pricing{
     @include layout-container-fluid;
     @include layout-spacing;
@@ -82,7 +139,4 @@
         width: 6rem;
         height: 6rem;
     }
-
-
-
 }
