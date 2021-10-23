@@ -20,21 +20,14 @@ $cta-font-sizes: (
     background-color: $cta-bg-color;
 
     &__container{
-        @include respond-to(xl){
-            padding-left: 10rem;
-            padding-right: 10rem;
-        }
-
-        @include layout-container-fluid;
-        padding-top: 7.5rem;
-        padding-bottom: 7.5rem;
+        padding-left: 13rem;
+        padding-right: 13rem;
+        padding-top: 11rem;
+        padding-bottom: 11rem;
         @include flex-justify(space-between);
     }
 
     &__heading{
-        @include respond-to(xl){
-            margin-right: 7rem;
-        }
         color: $body-main-color--w;
         line-height: 1;
         margin-right: 5rem;
@@ -42,6 +35,7 @@ $cta-font-sizes: (
 
     &__input-container{
         @include flex-justify(space-between);
+        max-width: 50rem;
         align-self: center;
         border: none;
         height: 5.5rem;
@@ -56,6 +50,7 @@ $cta-font-sizes: (
     }
 
     &__btn{
+        @include flex-center;
         font-size: 4rem;
         border: none;
         background-color: $cta-btn-bg-color;
@@ -70,6 +65,61 @@ $cta-font-sizes: (
         color: $hover-active-color;
     }
 
+    /// **** BELOW 1919PX **** ///
+    &__container{
+        @include respond-to(lg){
+            @include layout-container-fluid;
+            padding-top: 7.5rem;
+            padding-bottom: 7.5rem;
+        }
+    }
+
+    &__input-container{
+        @include respond-to(lg){
+            max-width: 40rem;
+        }
+    }
+
+    /// **** BELOW 1040PX **** ///
+    &__container{
+        @include respond-to(md){
+            flex-direction: column;
+            align-items: center;
+            padding-top: 7.5rem;
+            padding-bottom: 7.5rem;
+        }
+    }
+
+    &__heading{
+        @include respond-to(md){
+            align-self: flex-start;
+            padding-bottom: 4rem;
+            margin-right: 0rem;
+        }
+    }
+
+    &__input-container{
+        @include respond-to(md){
+            max-width: 35.5rem;
+        }
+    }
+
+    /// **** BELOW 480PX **** ///
+    @include respond-to(xs){
+        background-color: $cta-bg-color--b;
+    }
+
+
+    &__input-container{
+        @include respond-to(xs){
+            height: 4rem;
+        }
+    }
+    &__btn{
+        @include respond-to(xs){
+            font-size: 3rem;
+        }
+    }
 }
 
 ::placeholder { 
