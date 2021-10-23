@@ -25,12 +25,14 @@ $pricing-card-title-fs: (
     font-family: $font-family;
     @if $style == "price--txt" {
         font-weight: $fw-bold;
+        color: $body-main-color--w;
         @include font-size($pricing-price-fs);
     }
   
     @else if $style == "features--txt" {
         font-weight: $fw-normal;
-        @include font-size(pricing-features-fs);
+        color: $body-main-color--w;
+        @include font-size($pricing-features-fs);
       
     }
   
@@ -54,24 +56,31 @@ $pricing-card-title-fs: (
   }
 
 
+
+  
+
 /// **** PRICING STYLES **** ///
 .pricing{
     @include layout-container-fluid;
     @include layout-spacing;
 
+    &__heading{
+        text-align: center;
+        padding-bottom: 4rem;
+    }
+
     &__cards{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
+        gap: 3.75rem;
     }
 
     &__card{
-        color: $body-main-color--w;
-        border-radius: 3px;
+        border-radius: .1875rem;
         background-color: $pricing-card-bg-color;
-        padding-top: .5rem;
-        padding-left: .5rem;
-        padding-right: .5rem;
+        padding-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         padding-bottom: 3rem;
     }
 
@@ -79,25 +88,25 @@ $pricing-card-title-fs: (
         position: relative;
     }
 
-    &__card-title{
-        color: $body-main-color;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, 180% );
-        text-align: center;
-        background: rgba(255, 255, 255, 0.7);
-        border-radius: 3.125rem;
-        padding: .5rem 1.5rem;
-        width: 264px;
+    &__card-img{
+        width: 100%;  
     }
 
-    &__card-img{
-        width: 100%;
+    &__card-title{
+        position: absolute;
+        width: 70%;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -95%);
+        border-radius: 50rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.7);
+        padding: .6rem 0rem;
     }
 
     &__price{
         text-align: center;
+        padding: 1rem 0rem;
     }
 
     &__features {
@@ -116,27 +125,92 @@ $pricing-card-title-fs: (
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
 
-    &__btn-arrow{
-        @include respond-to(xl){
-            font-size: 5.5rem;
-        }
-        font-size: 3.5rem;
-        margin-left: 1rem;
+    &__feature:first-child {
+        padding-top: 0rem;
     }
 
-    &__btn-arrow--lg{
-        font-size: 6rem;
+    &__btn-container{
+        @include flex-justify;
     }
 
     &__link{
-        margin-top: 3rem;
+        padding-top: 4rem;
         text-align: center;
-        @include flex-center;
-        gap: 1rem;
     }
 
-    &__link-img{
-        width: 6rem;
-        height: 6rem;
+    &__card:last-child{
+       height: 100%; 
+       display: none;
     }
+
+    &__link--w{
+        color: white;
+        text-align: center;
+        
+    }
+
+    &__btn-arrow--w{
+        color: white;
+        font-size: 5rem;
+    }
+
+    /// **** BELOW 1040PX **** ///
+    &__heading{
+        @include respond-to(md){
+            padding-bottom: 3rem;
+        }
+        
+    }
+
+    &__cards{
+        @include respond-to(md){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__card:last-child{
+        @include respond-to(md){
+            @include flex-center(column);
+        }
+    }
+
+    &__link{
+        @include respond-to(md){
+            display: none;
+        }
+    }
+
+    /// **** BELOW 480PX **** ///
+    &__heading{
+        @include respond-to(xs){
+            padding-bottom: 2rem;
+        } 
+    }
+
+    &__cards{
+        @include respond-to(xs){
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__card:last-child{
+        @include respond-to(xs){
+            display: none;
+        }
+    }
+    &__card-title{
+        @include respond-to(xs){
+            width: 85%;
+            padding: .6rem .5rem;
+        }
+    }
+
+    &__link{
+        @include respond-to(xs){
+            display: block;
+            padding-top: 2rem;
+        }
+    }
+    
 }
+
