@@ -34,14 +34,21 @@ $h1-font-sizes: (
   x-large:   (8rem, 10.5rem),     //font size: 128px  line Height: 168px
   large :    (6rem, 8rem),        //font size: 96px  line Height: 128px
   medium:    (3.75rem, 5rem),     //font size: 60px  line Height: 80px
-  small :    (2rem, 3rem)         //font size: 32px  line Height: 48px
+  small :    (2.5rem, 3rem)       //font size: 40px  line Height: 64PX
 )!default;
 
 $h2-font-sizes: (
   x-large :   (6.75rem, 9rem),       //font size: 108px  line Height: 144px
   large :     (4rem, 5.5rem),         //font size: 64px  line Height: 88px
   medium:     (2.25rem, 3rem),         //font size: 36px  line Height: 48px
-  small :     (1.5rem, 2rem)        //font size: 24px  line Height: 32px
+  small :     (1.5rem, 2rem),         //font size: 24px  line Height: 32px
+)!default;
+
+$h3-font-sizes: (
+  x-large :   (6.75rem, 9rem),       //font size: 108px  line Height: 144px
+  large :     (4rem, 5.5rem),         //font size: 64px  line Height: 88px
+  medium:     (2.25rem, 3rem),         //font size: 36px  line Height: 48px
+  small :     (1.5rem, 2rem),         //font size: 24px  line Height: 32px
 )!default;
 
 @mixin font-size($fs-map, $fs-breakpoints: $font-size-breakpoints) {
