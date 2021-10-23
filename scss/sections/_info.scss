@@ -11,4 +11,32 @@
     &__txt:first-child{
        margin-bottom: 6rem;
     }
+
+    /// **** BELOW 768PX **** ///
+    &__txt{
+        @include respond-to(md){
+         padding-left: 0rem;
+         padding-right: 0rem;
+        }
+    }
+
+    &__txt:first-child{
+        @include respond-to(md){
+            margin-bottom: 3rem;
+        }
+    }
+
+    /// **** BELOW 480px **** ///
+    &__txt{
+        @include respond-to(md){
+         padding-left: 0rem;
+         padding-right: 0rem;
+        }
+    }
+
+    &__txt:first-child{
+        @include respond-to(md){
+            margin-bottom: 2rem;
+        }
+    }
 }
