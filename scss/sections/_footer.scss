@@ -3,7 +3,7 @@ $footer-font-sizes: (
   x-large:   (6rem, 8rem),      //font size: 96px  line Height: 128px
   large :    (3rem, 4rem),      //font size: 48px  line Height: 64px
   medium:    (2.25rem, 3rem),   //font size: 36px  line Height: 48px
-  small :    (1.25rem, 2rem),   //font size: 20px  line Height: 32px
+  small :    (1rem, 2rem),   //font size: 20px  line Height: 32px
 )!default;
 
 @mixin footer-links{
@@ -50,6 +50,32 @@ $footer-font-sizes: (
         text-decoration: underline;
         color: $hover-active-color;
         transform: translateX(0rem) translateY(.225rem);
+    }
+
+    /// **** BELOW 1040PX **** ///
+    &__container{
+        @include respond-to(md){
+            padding-bottom: 3.5rem;
+        }
+    }
+
+    &__logo{
+        @include respond-to(md){
+            padding-bottom: 3.5rem;
+        }
+    }
+
+    /// **** BELOW 480PX **** ///
+    &__container{
+        @include respond-to(xs){
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__logo{
+        @include respond-to(xs){
+            padding-bottom: 2rem;
+        }
     }
     
 }
