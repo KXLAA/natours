@@ -109,14 +109,28 @@ $cta-font-sizes: (
         background-color: $cta-bg-color--b;
     }
 
+    &__container{
+        @include respond-to(xs){
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
 
+    &__heading{
+        @include respond-to(xs){
+            padding-bottom: 1.5rem;
+        }
+    }
+    
     &__input-container{
         @include respond-to(xs){
             height: 4rem;
         }
     }
+
     &__btn{
         @include respond-to(xs){
+            color: $cta-bg-color--b;
             font-size: 3rem;
         }
     }

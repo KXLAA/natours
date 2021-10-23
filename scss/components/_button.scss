@@ -18,24 +18,23 @@ $button-font-sizes: (
 @mixin button-base{
     @include button-txt;
     display: inline-block;
-    width: 17rem;
     text-decoration:none;
     border-radius: 100rem;
-    padding: 1.5rem 0rem;
+    padding: 1.5rem 4rem;
     text-align: center;
     transition: all 0.3s ease;
+
+    /// **** BELOW 480PX **** ///
+    @include respond-to(xs){
+        padding: 1.3rem 3.4rem;
+    }
+            
+        
 }
 
-@mixin full-width-button{
-    @include button-base;
-    display: block !important;;
-    width: 100% !important;
-}
 
 .button--primary{
     @include button-base;
-    margin: 0 auto;
-    @include flex-center;
     color:$button-primary-color;
     background:$button-primary-bg-color;
 
@@ -49,4 +48,6 @@ $button-font-sizes: (
         transform: translateX(0rem) translateY(.125rem);
     } 
 }
+
+
 

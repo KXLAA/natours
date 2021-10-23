@@ -41,7 +41,7 @@
         
     }
 
-    /// **** BELOW 768PX **** ///
+    /// **** BELOW 480PX **** ///
     &__card{
         @include respond-to(xs){
             padding: .5rem;
