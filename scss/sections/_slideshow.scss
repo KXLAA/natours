@@ -25,6 +25,14 @@
         color: $hover-active-color;
     }
 
+    &__btn:last-child:active{
+        transform: translateX(5rem) translateY(0rem);
+    }
+
+    &__btn:first-child:active{
+        transform: translateX(-5rem) translateY(0rem);
+    }
+
     &__btn:last-child{
         margin-left: 1rem;
     }
