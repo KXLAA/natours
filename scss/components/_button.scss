@@ -39,12 +39,14 @@ $button-font-sizes: (
     background:$button-primary-bg-color;
 
     &:hover {
-        background:darken($button-primary-bg-color, 8%);
+        color:$button-primary-bg-color;
+        background:darken($hover-active-color, 8%);
         transform: translateX(0rem) translateY(-0.3125rem);
     }
 
     &:active {
-        background:darken($button-primary-bg-color, 25%);
+        color:$button-primary-bg-color;
+        background:darken($hover-active-color, 25%);
         transform: translateX(0rem) translateY(.125rem);
     } 
 }

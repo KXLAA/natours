@@ -13,6 +13,12 @@
         margin-top: 3rem;
         margin-bottom: 3rem;
         padding: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    &__card:hover{
+        background-color:$hover-active-color;
+        transform: translateX(0rem) translateY(-0.3rem);  
     }
 
     &__card:first-child {
@@ -50,3 +56,7 @@
     }
 
 }
+
+
+
+  

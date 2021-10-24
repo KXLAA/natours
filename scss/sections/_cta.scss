@@ -59,6 +59,7 @@ $cta-font-sizes: (
         padding-left: 1rem;
         padding-right: 1rem;
         color: $cta-btn-color;
+        transition: all 0.3s ease;
     }
 
     &__btn:hover{

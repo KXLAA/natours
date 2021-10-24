@@ -274,11 +274,13 @@ select {
   }
 }
 .button--primary:hover {
-  background: #ebebeb;
+  color: #FFFFFF;
+  background: #4219a1;
   transform: translateX(0rem) translateY(-0.3125rem);
 }
 .button--primary:active {
-  background: #bfbfbf;
+  color: #FFFFFF;
+  background: #230d55;
   transform: translateX(0rem) translateY(0.125rem);
 }
 
@@ -516,6 +518,11 @@ select {
   margin-top: 3rem;
   margin-bottom: 3rem;
   padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.benefits__card:hover {
+  background-color: #501EC4;
+  transform: translateX(0rem) translateY(-0.3rem);
 }
 .benefits__card:first-child {
   margin-top: 0rem;
@@ -762,6 +769,10 @@ select {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 3rem;
+  transition: all 0.3s ease;
+}
+.pricing__card:hover {
+  transform: translateX(0rem) translateY(-2rem);
 }
 .pricing__card-img-container {
   position: relative;
@@ -808,6 +819,12 @@ select {
 .pricing__link {
   padding-top: 4rem;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pricing__link:hover {
+  color: #501EC4;
+  text-decoration: underline;
 }
 .pricing__card:last-child {
   height: 100%;
@@ -947,6 +964,7 @@ select {
   padding-left: 1rem;
   padding-right: 1rem;
   color: #474747;
+  transition: all 0.3s ease;
 }
 .cta__btn:hover {
   color: #501EC4;
@@ -1079,6 +1097,12 @@ select {
 }
 .slideshow__btn:hover {
   color: #501EC4;
+}
+.slideshow__btn:last-child:active {
+  transform: translateX(5rem) translateY(0rem);
+}
+.slideshow__btn:first-child:active {
+  transform: translateX(-5rem) translateY(0rem);
 }
 .slideshow__btn:last-child {
   margin-left: 1rem;
