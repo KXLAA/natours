@@ -3,7 +3,7 @@ const slideShowImages = document.querySelectorAll('.slideshow__img')
 const nextBtn = document.querySelector('.next')
 const backBtn = document.querySelector('.back')
 
-let activeImage = 0
+let activeImage = 0 
 
 nextBtn.addEventListener('click', () => {
     activeImage++
@@ -27,5 +27,3 @@ const setActiveImage = () => {
     })
     slideShowImages[activeImage].classList.add('active')
 }
-
-
