@@ -1,17 +1,13 @@
 # KXLA 🤙 - NATOURS
-<!-- This is a scss boilerplate inspired by [Matthew Elsom](https://matthewelsom.com/blog/simple-scss-playbook.html#file-structure) & [Kitty Giraudel](https://sass-guidelin.es/).I have adjusted my version to fit the needs and the specifics of projects i work on.  
+Natours is a modern & responsive  Landing page for a fictional travel tour company designed and developed by me. I created a design system and architected scalable styling with the BEM naming methodology and 5/1 SCSS file structure. There is also some javascript in the mix,  which was used to make the image slider functional and a few CSS animations to bring the page to life.
 
+## 🔗 Links
 
-## Features
-* DRY media query manager mixin 🌵
-* Base style classes named following the BEM methodology 🅱️
-* Flexbox toolkit Mixin 💪
-* Responsive layout container Mixin ▣
-* Responsive button classes 🆑
-* And so many more 😃
-
-If you find it useful don't forget to ⭐⭐⭐⭐
+- [LIVE PREVIEW](https://kxlaa.github.io/NATOURS-V1/)
+  
+## Live Demo
+![](Assets/Desktop/demo-2.gif)
 
 
 ## Author
-* Website - [KXLA 🤙](https://github.com/KXLAA) -->
+* [KXLA 🤙](https://kxlaa.com/)
